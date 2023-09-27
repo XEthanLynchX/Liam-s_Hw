@@ -1,5 +1,8 @@
 income = float(input("Enter the annual income: "))
 marital_status = input("Enter the marital status [y/n]: ")
+if marital_status == "y":
+  years_married = int(input("Enter the years married: "))
+
 elevation = (input("Evevation below - 1 At sea level - 2 Above sea level - 3 "))
 
 income_tax = 0
@@ -29,7 +32,7 @@ elif elevation == "3":
 
 total_tax = income * income_tax - martial_adjustment + additional_adjustment
 
-print("Your tax percentage is: ", total_tax)
+print("Your tax total is: ", total_tax)
 
 
 
