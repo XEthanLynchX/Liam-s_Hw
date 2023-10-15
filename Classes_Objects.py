@@ -6,6 +6,8 @@ class Worker:
         self.birth_date = None
         self.hours_worked = 0
         self.overtime_hours = 0
+        self.hourly_salary = 0.0
+        self.overtime_hourly_salary = 0.0
 
     def get_employee_number(self):
         return self.employee_number
@@ -48,3 +50,26 @@ class Worker:
 
     def get_overtime_hours(self):
         return self.overtime_hours
+    
+    def set_hourly_salary(self, hourly_salary):
+        self.hourly_salary = hourly_salary
+        if hourly_salary < 0:
+            return False
+        else:
+            return True
+        
+    def set_overtime_hourly_salary(self, overtime_hourly_salary):
+        self.overtime_hourly_salary = overtime_hourly_salary
+        if overtime_hourly_salary < 0:
+            return False
+        else: 
+            return True
+        
+    def get_hourly_salary(self):
+        return self.hourly_salary
+    
+    def get_overtime_hourly_salary(self):
+        return self.overtime_hourly_salary
+    
+    def get_pay(self):
+        return self.hourly_salary * self.hours_worked + self.overtime_hourly_salary * self.overtime_hours
